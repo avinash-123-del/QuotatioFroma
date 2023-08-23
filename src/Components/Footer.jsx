@@ -21,7 +21,7 @@ const Footer = () => {
   }
 
   return (
-    <div className='flex justify-between items-start'>
+    <div className='flex justify-between items-start mb-[50px]'>
 
     <div className='w-[50%]'>
       <div className='flex justify-start items-center'>

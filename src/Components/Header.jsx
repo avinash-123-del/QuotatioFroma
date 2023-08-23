@@ -20,8 +20,8 @@ const Header = () => {
     useEffect(() => {
         let amount = input.rate * input.quantity
         setTotalAmount(amount)
-    }, [input.rate , input.quantity,setTotalAmount])
- 
+    }, [input.rate, input.quantity, setTotalAmount])
+
 
     function handleChange(e) {
         setInput({ ...input, [e.target.name]: e.target.value })
@@ -38,11 +38,11 @@ const Header = () => {
             setEdit(false)
             setForm(true)
         }
-        else{
+        else {
             setInput({
-            item: '', quantity: '', rate: ''
-        })
-        setTableData(prev => [...prev, input])
+                item: '', quantity: '', rate: ''
+            })
+            setTableData(prev => [...prev, input])
         }
 
     }
@@ -88,7 +88,7 @@ const Header = () => {
                         value={input.rate}
                         onChange={handleChange} />
 
-                    <button onClick={() =>  setForm(!form)}
+                    <button onClick={() => setForm(!form)}
                         className='p-2 flex justify-start items-center gap-2 text-sm text-gray-600 border border-gray-400 rounded-lg'><VscDiffAdded size={15} color='gray' />Add</button>
 
                 </form>
@@ -100,7 +100,7 @@ const Header = () => {
                     <th scope="col" className="px-6 py-3" >
                         Item
                     </th>
-                    <th scope="col" className="px-6 py-3">
+                    <th scope="col" className="px-14 w-[18%]  py-3">
                         Quantity
                     </th>
                     <th scope="col" className="px-6 py-3">
@@ -109,7 +109,7 @@ const Header = () => {
                     <th scope="col" className="px-6 py-3">
                         Amount
                     </th>
-                    <th scope="col" className="px-6 py-3">
+                    <th scope="col" className="px-6 py-3 ">
                         Actions
                     </th>
                 </tr>
@@ -122,24 +122,24 @@ const Header = () => {
                     <table className="w-full text-sm text-left text-gray-500 ">
                         <tbody>
                             <tr className="bg-transparent text-gray-900 border-none pt-10">
-                                <td  className="px-6 py-4">
+                                <td className="px-6 py-4 ">
                                     {data.item}
-                                    <div className='h-[1px] w-full bg-gray-400'></div>
+                                    <div className='h-[1px] mt-2 w-full bg-gray-400 '></div>
                                 </td>
-                                <td className="px-6 py-4 ">
+                                <td className="px-6 py-4  ">
                                     {data.quantity}
-                                    <div className='h-[1px] w-full bg-gray-400'></div>
+                                    <div className='h-[1px] mt-2 w-full bg-gray-400 '></div>
                                 </td>
-                                <td className="px-6 py-4 ">
+                                <td className="px-6 py-4  ">
                                     ₹{data.rate}
-                                    <div className='h-[1px] w-full bg-gray-400'></div>
+                                    <div className='h-[1px] mt-2 w-full bg-gray-400 '></div>
                                 </td>
 
-                                <td className="px-6 py-4  font-bold">
+                                <td className="px-6 py-4  font-bold " >
                                     ₹{data.quantity * data.rate}
-                                    <div className='h-[1px] w-full bg-gray-400'></div>
+                                    <div className='h-[1px] mt-2 w-full bg-gray-400 '></div>
                                 </td>
-                                <td className='flex justify-start ml-6 gap-4 items-end mt-5'>
+                                <td className='flex justify-center mb-2 ml-6 w-[50%] gap-4 items-end mt-5 '>
                                     <span className='cursor-pointer'><CiEdit size={25} color='#808080' onClick={() => handleEdit(id)} /></span>
                                     <span className='cursor-pointer'><VscClose size={25} color='#808080' onClick={() => handleDelete(id)} /></span>
                                 </td>
@@ -162,12 +162,11 @@ const Header = () => {
             ))
             }
 
-
             <button onClick={() => setForm(true)}
                 className='flex items-center justify-center my-10 bg-[#e8f4f8] py-3 border-2  border-dashed w-full border-gray-300 text-sm text-gray-500 gap-2'><VscDiffAdded size={20} /> Add New Line</button>
 
 
-            
+
         </div>
     )
 }
