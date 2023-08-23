@@ -40,8 +40,8 @@ const GeneratedQuotation = () => {
       </table>
 
 <div className='flex flex-col justify-end items-end mr-2 mt-3'>
-  <p>Items Price : {billPrice}</p>
-  <p>Discount : {discount}</p>
+  <p>Items Price : {billPrice}/-</p>
+  <p>Discount : {discount}/-</p>
   <p>Tax : {tax}%</p>
   <h3 className='font-bold'>Total Price : {totalPrice}</h3>
 </div>
