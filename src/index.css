@@ -29,3 +29,7 @@
     .discount-btn>button>span{
     @apply pl-2
     }
+
+    tr{
+    @apply w-[150px] overflow-hidden
+    }

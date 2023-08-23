@@ -130,13 +130,13 @@ const Header = () => {
                                     {data.quantity}
                                     <div className='h-[1px] mt-2 w-full bg-gray-400 '></div>
                                 </td>
-                                <td className="px-6 py-4  ">
+                                <td className="px-6 py-4 ">
                                     ₹{data.rate}
                                     <div className='h-[1px] mt-2 w-full bg-gray-400 '></div>
                                 </td>
 
                                 <td className="px-6 py-4  font-bold " >
-                                    ₹{data.quantity * data.rate}
+                                    ₹{(data.quantity * data.rate).toFixed(2)}
                                     <div className='h-[1px] mt-2 w-full bg-gray-400 '></div>
                                 </td>
                                 <td className='flex justify-center mb-2 ml-6 w-[50%] gap-4 items-end mt-5 '>
