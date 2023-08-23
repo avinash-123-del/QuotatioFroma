@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { BsTag } from 'react-icons/bs'
 import { VscDiffAdded } from 'react-icons/vsc'
 import { AppContext } from './ContextProvider'
@@ -15,6 +15,8 @@ const Total = () => {
     total += parseInt(element.rate) * parseInt(element.quantity)
     total = total * 0.18 + total
     console.log("tableData index",);
+
+    return null;
   });
 
   if (applyDiscount !== 0) {
@@ -23,7 +25,7 @@ const Total = () => {
   }
   useEffect(() => {
     setInvoiceAmount(total.toFixed(2))
-  }, [total])
+  }, [total , setInvoiceAmount])
 
   // console.log("lamba" , tableData.length )
 

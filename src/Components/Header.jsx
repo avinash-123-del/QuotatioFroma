@@ -21,7 +21,7 @@ const Header = () => {
         let amount = input.rate * input.quantity
         setTotalAmount(amount)
     }, [handleSubmit])
-    // }, [input.rate , input.quantity])
+ 
 
     function handleChange(e) {
         setInput({ ...input, [e.target.name]: e.target.value })
@@ -122,7 +122,7 @@ const Header = () => {
                     <table className="w-full text-sm text-left text-gray-500 ">
                         <tbody>
                             <tr className="bg-transparent text-gray-900 border-none pt-10">
-                                <td scope="row" className="px-6 py-4">
+                                <td  className="px-6 py-4">
                                     {data.item}
                                     <div className='h-[1px] w-full bg-gray-400'></div>
                                 </td>

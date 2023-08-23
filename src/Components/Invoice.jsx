@@ -49,7 +49,7 @@ const [printView , setPrintView] = useState(true)
           <tbody>
             {tableData.map((data, id) => (
               <tr key={id} className='bg-transparent text-gray-900 border-none pt-10'>
-                <td scope='row' className='px-6 py-4'>
+                <td className='px-6 py-4'>
                   {data.item}
                 </td>
                 <td className='px-6 py-4'>
