@@ -1,0 +1,31 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.btn{
+    @apply flex justify-start items-center gap-2
+    }
+    
+    .footer-btn{
+    @apply  flex items-center justify-start my-2 mx-2 bg-[#e8f4f8] py-2 border-2  border-dashed  border-gray-300 text-sm text-start text-gray-500 gap-2 rounded-md w-fit px-2
+    }
+    
+    button{
+    @apply  hover:scale-105 transform duration-200 
+    }
+    
+    input{
+    @apply px-2 py-1 rounded-md bg-gray-50
+    }
+    
+    tbody>tr>td{
+    @apply py-4
+    }
+    
+    .discount-btn>button{
+    @apply border border-dashed p-2 text-stone-50
+    }
+    .discount-btn>button>span{
+    @apply pl-2
+    }
