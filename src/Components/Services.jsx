@@ -1,21 +1,31 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { AppContext } from './AppProvider';
+import { useNavigate } from 'react-router-dom';
 
 const Services = () => {
 
   // const [item , setItem] = useState({tax:'', discount:''})
 
-  const { selectedPrices, setSelectedPrices, handleSubmit, billPrice, item, totalPrice, setItem } = useContext(AppContext)
 
 
+  const { selectedPrices, setSelectedPrices,
+    services , setServices, handleSubmit, 
+    billPrice, item, totalPrice, setItem } = useContext(AppContext)
 
-  const handleCheckboxChange = (isChecked, itemId, price) => {
+const nav = useNavigate()
+
+  const handleCheckboxChange = (isChecked, itemId, price, data) => {
     if (isChecked) {
       setSelectedPrices([...selectedPrices, { itemId, price }]);
+      setServices([...services, data]); 
+
     } else {
       setSelectedPrices(selectedPrices.filter(item => item.itemId !== itemId));
+      setServices(services.filter(service => service.id !== data.id));
     }
   };
+
+  console.log('services',services);
 
   function handleChange(e) {
     setItem({ ...item, [e.target.name]: e.target.value })
@@ -74,7 +84,7 @@ const Services = () => {
                 <input
                   type="checkbox"
                   className='mt-4'
-                  onChange={(e) => handleCheckboxChange(e.target.checked, data.id, data.Price)}
+                  onChange={(e) => handleCheckboxChange(e.target.checked, data.id, data.Price , data)}
                 />
               </td>
             </tr>
@@ -121,9 +131,9 @@ const Services = () => {
 
       <div className='flex justify-center items-center'>
 
-        <button type='submit'
+      <button type='submit'
           className={`hover:scale-110 duration-300 ${selectedPrices.length <= 1 ? 'bg-gray-600' : 'bg-[#727000] '} py-1 px-2 rounded-md text-stone-100`}
-          disabled={selectedPrices.length <= 1 ? true : false} onClick={handleSubmit}>CREATE</button>
+          disabled={selectedPrices.length <= 1 ? true : false} onClick={(e) => {handleSubmit(e); nav('/quotation')}}>CREATE</button>
 
       </div>
 

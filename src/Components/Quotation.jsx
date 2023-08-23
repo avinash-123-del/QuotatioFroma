@@ -83,9 +83,9 @@ const Quotation = () => {
                     <label htmlFor="country" className='relative font-bold text-sm mb-2'>COUNTRY<span className='absolute text-red-500 right-[-10px]'>*</span></label>
                     <select name="country" id="country" onChange={handleChange} required className={`${isCountryValid ? 'text-gray-900 ' : 'text-gray-400'}`}>
                         <option value='' className='bg-gray-300'>select country</option>
-                        <option value='india' >India</option>
-                        <option value='america' >America</option>
-                        <option value='egypt' >Egypt</option>
+                        <option value='India' >India</option>
+                        <option value='America' >America</option>
+                        <option value='Egypt' >Egypt</option>
                     </select>
                     
                 </div>

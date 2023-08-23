@@ -6,6 +6,7 @@ const AppContextProvider = ({ children }) => {
 
     const [selectedPrices, setSelectedPrices] = useState([]);
     const [item, setItem] = useState({ tax: '', discount: '' })
+    const [services , setServices] = useState([])
 
     const [input, setInput] = useState({ customerName: '', email: '', mobileNum: '', country: '', address: '', city: '', payment: '', price: selectedPrices })
 
@@ -25,8 +26,7 @@ const AppContextProvider = ({ children }) => {
     let billPrice = 0;
     let totalPrice = 0;
 
-    if (selectedPrices.length >= 2) {
-        console.log('haa');
+    // if (selectedPrices.length >= 2) {
         selectedPrices.forEach((e) => {
             billPrice += parseFloat(e.price);
         });
@@ -39,14 +39,15 @@ const AppContextProvider = ({ children }) => {
             totalPrice = totalPrice - discount;
             totalPrice = totalPrice + totalPrice * (tax / 100);
         }
-    }
+    // }
 
 
     const value = {
         selectedPrices, setSelectedPrices,
         handleSubmit, input,
         setInput, billPrice,
-        item, setItem, totalPrice
+        item, setItem, totalPrice,
+        services , setServices, tax, discount
     };
 
     return <AppContext.Provider value={value}>{children}</AppContext.Provider>;
