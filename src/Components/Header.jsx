@@ -20,7 +20,7 @@ const Header = () => {
     useEffect(() => {
         let amount = input.rate * input.quantity
         setTotalAmount(amount)
-    }, [handleSubmit])
+    }, [input.rate , input.quantity,setTotalAmount])
  
 
     function handleChange(e) {
