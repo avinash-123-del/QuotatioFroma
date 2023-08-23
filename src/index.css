@@ -1,35 +1,29 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-.btn{
-    @apply flex justify-start items-center gap-2
+@layer base {
+  body {
+    @apply p-0 m-0;
+  }
+  .quotation > div > input {
+      @apply w-[430px] py-2 border rounded-md;
     }
-    
-    .footer-btn{
-    @apply  flex items-center justify-start my-2 mx-2 bg-[#e8f4f8] py-2 border-2  border-dashed  border-gray-300 text-sm text-start text-gray-500 gap-2 rounded-md w-fit px-2
+    .quotation > div > select {
+@apply w-[430px] py-2 border rounded-md;
     }
-    
-    button{
-    @apply  hover:scale-105 transform duration-200 
-    }
-    
-    input{
-    @apply px-2 py-1 rounded-md bg-gray-50
-    }
-    
-    tbody>tr>td{
-    @apply py-4
-    }
-    
-    .discount-btn>button{
-    @apply border border-dashed p-2 text-stone-50
-    }
-    .discount-btn>button>span{
-    @apply pl-2
-    }
+  option{
+    @apply text-gray-800
+  }
+  input{
+    @apply px-4
+  }
+  tr , th , td {
+    @apply border-4 border-stone-100 p-2
+  }
+  th{
+    @apply bg-[#c2babc]
+  }
+ 
+}
 
-    tr{
-    @apply w-[150px] overflow-hidden
-    }
